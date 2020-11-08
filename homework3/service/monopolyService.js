@@ -33,6 +33,7 @@ router.get("/players/:id", readPlayer);
 router.put("/players/:id", updatePlayer);
 router.post('/players', createPlayer);
 router.delete('/players/:id', deletePlayer);
+router.get("/highscoreholder", readHighscoreHolder);
 
 app.use(router);
 app.use(errorHandler);
@@ -62,12 +63,12 @@ function readHelloMessage(req, res) {
 // add multi-table query to data service for Homework 3
 // read the name of the player with the highest score, show their highcore
 function readHighscoreHolder(req, res, next) {
-    db.many("SELECT Player.name, PlayerGame.score " +
-            "FROM PlayerGame, Player" +
-            "WHERE playerID = Player.ID" +
-            "ORDER BY score DESC" +
-            "LIMIT 1" +
-            ";")
+    db.many(`SELECT Player.name, PlayerGame.score
+             FROM PlayerGame, Player
+             WHERE playerID = Player.ID
+             ORDER BY score DESC
+             LIMIT 1
+             ;`)
         .then(data => {
             returnDataOr404(res, data);
         })
