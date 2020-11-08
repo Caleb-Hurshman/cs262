@@ -1,22 +1,21 @@
-# CS 262 Monopoly Webservice
+# Homework 3
+a. https://powerful-savannah-37742.herokuapp.com
+    https://powerful-savannah-37742.herokuapp.com/players
+    https://powerful-savannah-37742.herokuapp.com/players/:id
+    https://powerful-savannah-37742.herokuapp.com/highscoreholder
+    router.put("/players/:id", updatePlayer);
+    router.post('/players', createPlayer);
+    router.delete('/players/:id', deletePlayer);
+    
+b. https://powerful-savannah-37742.herokuapp.com  is nullipotent
+    https://powerful-savannah-37742.herokuapp.com/players  is nullipotent
+    https://powerful-savannah-37742.herokuapp.com/players/:id  is nullipotent
+    https://powerful-savannah-37742.herokuapp.com/highscoreholder  is nullipotent
+    router.put("/players/:id", updatePlayer);  is idempotent
+    router.post('/players', createPlayer);  is neither idempotent nor nullipotent
+    router.delete('/players/:id', deletePlayer);  is idempotent
+    
+c. I think it is RESTful because it uses https and doesn't track state (no saved context of user visits)
 
-This is the data service application for the [CS 262 sample Monopoly project](https://github.com/calvin-cs262-organization/monopoly-project) 
-and it is deployed here:
-          
-<https://cs262-monopoly-service.herokuapp.com/>
-
-It is based on the standard Heroku with Node.js tutorial.
-
-<https://devcenter.heroku.com/articles/getting-started-with-nodejs>  
-
-The database is relational with the schema specified in the `sql/` sub-directory,
- and is hosted on [ElephantSQL](https://www.elephantsql.com/). The database user
-and password are stored as Heroku configuration variables rather than in this (public) repo.
-
-We implement this sample as a separate repo to simplify Heroku integration, but 
-for lab 9, you can simply submit your code under the standard `cs262/lab09` directory. 
-For the team project, configure your Heroku app to auto-deploy the code from the
-master/main branch of your
-service repo; do this by following the instructions under the &ldquo;Deploy&rdquo; 
-tab in your application in the Heroku dashboard.
+d. There 
  
