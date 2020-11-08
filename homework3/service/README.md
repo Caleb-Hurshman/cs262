@@ -5,8 +5,8 @@ a.
     https://powerful-savannah-37742.herokuapp.com/players/:id  
     https://powerful-savannah-37742.herokuapp.com/highscoreholder 
     router.put("/players/:id", updatePlayer);  
-    router.post('/players', createPlayer);  
-    router.delete('/players/:id', deletePlayer);  
+    router.post('/players', createPlayer); 
+    router.delete('/players/:id', deletePlayer);
     
 
 b. 
@@ -20,5 +20,5 @@ b.
     
 c. I think it is RESTful because it uses https and doesn't track state (no saved context of user visits)
 
-d. There 
+d. I did not have any issues using the data from my query for the client, so I think there is no impedence     mismatch in this case
  
